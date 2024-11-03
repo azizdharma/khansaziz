@@ -27,10 +27,9 @@ body {
 .hero {
     min-height: 100vh;
     background-image: url(img/bg-1.png);
-    background-color: var(--bg);
     background-size: cover;
     background-position: top;
-    /* background-color: var(--bg); */
+    background-color: var(--bg);
 }  
 
 .hero h1 {
@@ -43,10 +42,7 @@ body {
     font-size: 1.6rem;
     /* color: var(--bg); */
 }
-.hero h5 {
-    /* font-size: 1.6rem; */
-    /* color: var(--bg); */
-}
+
 
 .hero p {
     font-size: 1rem;
@@ -65,7 +61,7 @@ body {
 }
 
 .hero .kepada {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .hero .kepada p {
@@ -156,10 +152,10 @@ body {
 }
 
 .info {
-    /* background-image: url(img/bg-3.png);
+    background-image: url(img/bg-3.png);
     background-size: cover;
-    background-position: top; */
-    background-color: var(--emas);
+    background-position: top;
+    background-color: var(--bg);
     color: #444;
     padding-top: 7rem;
     padding-bottom: 8rem;
@@ -175,6 +171,11 @@ body {
 .info h4 {
     /* color: var(--bg); */
     font-size: 1.4rem;
+    font-weight: 500;
+}
+.info h5 {
+    color: var(--bg);
+    /* font-size: 1.4rem; */
     font-weight: 500;
 }
 
@@ -219,6 +220,13 @@ body {
     .simply-countdown > .simply-countdown {
         font-size: 0.4rem !important;
     }
+    .hero {
+
+        background-image: url(img/bg-hero-pc.png);
+        background-size: cover;
+        background-position: top;
+        background-color: var(--bg);
+    }  
 }
 /* Laptop */
 @media (max-width: 992px) {
