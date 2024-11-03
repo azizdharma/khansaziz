@@ -36,28 +36,30 @@ body {
 .hero h1 {
     font-family: "Tangerine", cursive;
     font-size: 5rem;
-    color: var(--bg);
+    color: var(--emas);
     font-weight: 600;
 }
 .hero h4 {
     font-size: 1.6rem;
+    /* color: var(--bg); */
 }
 .hero h5 {
     /* font-size: 1.6rem; */
-    color: var(--bg);
+    /* color: var(--bg); */
 }
 
 .hero p {
     font-size: 1rem;
-    color: var(--bg);
+    /* color: var(--bg); */
+    font-weight: 300;
 }
 
-.hero a:hover {
+.hero a {
     color: var(--bg);
     background-color: var(--emas);
 }
 
-.hero a {
+.hero a:hover {
     color: var(--emas);
     background-color: var(--bg);
 }
