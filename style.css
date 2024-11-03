@@ -1,0 +1,246 @@
+:root {
+    --emas: #a59468;
+    --bg: #eee7e6;
+    --shadow: 0 2px 2px rgba(0 0 0 / 0.5);
+}
+
+body {
+    /* font-size: 1.2rem; */
+    font-family: "Work Sans", sans-serif;
+    min-height: 4000px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/bg.png);
+    background-size: cover;
+    background-position: top;
+    z-index: -1;
+}
+
+.hero {
+    min-height: 100vh;
+    /* background-color: var(--bg); */
+}  
+
+.hero h1 {
+    font-family: "Tangerine", cursive;
+    font-size: 5rem;
+    color: #a59468;
+    font-weight: 600;
+}
+.hero h4 {
+    font-size: 1.6rem;
+}
+
+.hero p {
+    font-size: 1rem;
+}
+
+.hero a {
+    color: white;
+    background-color: var(--emas);
+}
+
+.hero a:hover {
+    color: var(--emas);
+    background-color: white;
+}
+
+.hero .kepada {
+    padding-top: 100px;
+}
+
+.hero .kepada p {
+    font-size: 0.9rem;
+}
+
+.mynavbar {
+    background-color: rgba(255 255 255 / 1) !important;
+    /* backdrop-filter: blur(4px); */
+}
+
+
+.mynavbar .navbar-brand, 
+.mynavbar .offcanvas-title {
+    font-family: "Tangerine", cursive;
+    font-size: 2rem;
+    color: #a59468;
+    font-weight: 600;
+} 
+
+.mynavbar .nav-link {
+    text-transform: uppercase;
+}
+
+.home {
+    background-color: var(--bg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: top;
+    z-index: -1;
+    margin-top: -6rem;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+}
+
+.home h2 {
+    color: var(--emas);
+    font-family: "Tangerine", cursive;
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+
+.home h3 {
+    color: #444;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.home p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.home .couple {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.home .couple h3 {
+    color: var(--emas);
+    font-family: "Tangerine", cursive;
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+
+.home .couple img {
+    width: 100%;
+}
+
+.home .alamat-rumah {
+    font-size: 0.9rem;
+}
+
+.countdown-part {
+    padding-top: 60px;
+    min-height: 300px;
+    background-color: var(--bg);
+}
+
+.countdown-part p {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+
+}
+
+.info {
+    background-color: var(--emas);
+    color: #444;
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+}
+
+.info h2 {
+    color: var(--bg);
+    font-family: "Tangerine", cursive;
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.info h4 {
+    color: var(--bg);
+    /* font-size: 1.1rem; */
+    font-weight: 600;
+}
+
+.info .alamat {
+    color: var(--bg);
+    font-size: 1.1rem !important;
+}
+
+.info .card {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    margin-bottom: 5px;
+}
+
+.info .card-header {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.info .card-body {
+    font-size: 1.1rem;
+
+}
+
+.info .card-footer {
+    font-size: 1rem;
+}
+
+
+/* Media Query */
+/* Larger than Laptop */
+@media only screen and (min-width: 1200px) {
+    .simply-countdown > .simply-section {
+        padding: 40px !important;
+        font-size: 1rem !important;
+    }
+
+    .simply-countdown > .simply-countdown {
+        font-size: 0.4rem !important;
+    }
+}
+/* Laptop */
+@media (max-width: 992px) {
+    html {
+        font-size: 80%;
+    }
+
+    .simply-countdown > .simply-section {
+        padding: 40px !important;
+    }
+
+}
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 65%;
+    }
+
+    .simply-countdown > .simply-section {
+        padding: 40px !important;
+        margin: 5px;
+    }
+
+    .mynavbar .nav-link {
+        font-size: 2rem;
+        text-align: center;
+        
+    }
+    
+}
+/* Mobile */
+@media (max-width: 576px) {
+    html {
+        font-size: 85%;
+    }
+
+    .simply-countdown > .simply-section {
+        padding: 45px;
+        margin: 3px;
+    }
+
+    .home {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
