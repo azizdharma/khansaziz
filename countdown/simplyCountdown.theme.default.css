@@ -28,8 +28,13 @@
 .simply-countdown>.simply-section .simply-amount,.simply-countdown>.simply-section .simply-word {
     display:block;text-align:center
 }
-
+ 
 .simply-word {
     font-weight: 300 !important;
     font-size: 0.8rem !important;
-}
+}
+
+.caption-countdown {
+    font-weight: 300 !important;
+    margin-bottom: 6rem !important;
+}
