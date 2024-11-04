@@ -240,11 +240,11 @@
             <form action="" id="commentForm">
               <div class="mb-3">
                 <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
-                <input type="text" class="form-control" id="nama" placeholder="Nama">
+                <input type="text" class="form-control" id="nama" placeholder="Nama" required>
               </div>
               <div class="mb-3">
                 <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
-                <textarea class="form-control" id="ucapan" rows="3" placeholder="Berikan Ucapan dan Doa"></textarea>
+                <textarea class="form-control" id="ucapan" rows="3" placeholder="Berikan Ucapan dan Doa" required></textarea>
               </div>
               <select class="form-select" aria-label="Default select example">
                 <option selected disabled text-muted>Konfirmasi Kehadiran</option>
@@ -257,39 +257,13 @@
             </form>
 
           </div>
-          <div class="col-md-8 ucapan" id="response">
+          <div id="response"></div>
+          <h2>Ucapan</h2>
+          
+          <div class="col-md-8 ucapan">
             <table class="table bg-transparent ">
               <tbody>
-                <tr>
-                  <td class="bg-transparent">
-                    <h6>Prabowo Subianto</h6>
-                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
-                    <span class="text-body-secondary d-block">2 days ago</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="bg-transparent">
-                    <h6>Prabowo Subianto</h6>
-                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
-                    <span class="text-body-secondary d-block">2 days ago</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="bg-transparent">
-                    <h6>Prabowo Subianto</h6>
-                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
-                    <span class="text-body-secondary d-block">2 days ago</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="bg-transparent">
-                    <h6>Prabowo Subianto</h6>
-                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
-                    <span class="text-body-secondary d-block">2 days ago</span>
-                  </td>
-                </tr>
-                
-               
+                <div id="commentSection"></div>
               </tbody>
             </table>
           </div>
@@ -310,6 +284,49 @@
       </div>
     </footer>
 
+    <script>
+      // URL Web App Google Apps Script untuk mengambil data komentar
+      const dataURL = 'https://script.google.com/macros/s/AKfycbwYgLbTK56H_FguIEOr0iOEp_EYZpTCb8pvjYBlLyo/exec';
+  
+      // Fungsi untuk mengambil data komentar dan menampilkannya
+      async function loadComments() {
+          try {
+              // Ambil data dari Google Sheets
+              const response = await fetch(dataURL);
+              const comments = await response.json();
+  
+              // Menampilkan komentar di halaman HTML
+              const commentSection = document.getElementById('commentSection');
+              commentSection.innerHTML = ''; // Kosongkan elemen sebelumnya
+              
+              comments.forEach(comment => {
+                  // Buat elemen baru untuk setiap komentar
+                  const commentDiv = document.createElement('div');
+                  commentDiv.classList.add('comment');
+  
+                  // Isi elemen dengan data komentar
+                  commentDiv.innerHTML = `
+                    <tr>
+                      <td class="bg-transparent">
+                        <h6>${comment.nama}</h6>
+                        <span class="pesan-ucapan">${comment.ucapan}</span>
+                        <span class="text-body-secondary d-block">(${new Date(comment.waktu).toLocaleString()})</span>
+                      </td>
+                    </tr>   
+                  `;
+  
+                  // Tambahkan elemen ke section komentar
+                  commentSection.appendChild(commentDiv);
+              });
+          } catch (error) {
+              console.error('Gagal memuat komentar:', error);
+          }
+      }
+  
+      // Panggil fungsi untuk memuat komentar saat halaman dibuka
+      loadComments();
+  </script>
+  
 
     <script>
       document.getElementById('commentForm').addEventListener('submit', function(e) {
