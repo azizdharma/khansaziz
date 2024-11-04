@@ -113,25 +113,28 @@
 
         <div class="row justify-content-center ">
           <div class="col-md-5 col-10">
-               
           <div class="card text-center bg-transparent">
+            
             <div class="card-body">
-              <h5 class="card-title">Akad Nikah</h5>
+              <!-- <h4> Akad </h4> -->
+              <i class="bi bi-stars"></i>&nbsp Akad Nikah &nbsp<i class="bi bi-stars"></i>
+            </div>
+            <div class="card-header">
               <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-12 mt-2 my-2">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <span>Balai RW Sanggrahan Karangasem</span> 
+                </div>
+                <div class="col-md-8 mt-2 my-2">
                   <i class="bi bi-calendar3 "></i>
                   <span>Minggu, 1 Desember 2024</span>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4 mt-2 my-2">
                   <i class="bi bi-clock "></i>
                   <span>10.00 WIB</span>
                 </div>
               </div>
-            </div>
-            <div class="card-footer">
-              <i class="bi bi-geo-alt-fill"></i>
-              <span>Balai RW Sanggrahan Karangasem</span>
-            </div>
+            </div>   
           </div>
 
         </div>
@@ -140,13 +143,12 @@
         <br><br><br><br>
 
       </div>
-
     </section>
 
     <section id="info" class="info">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-7 col-10 text-center">
+          <div class="col-md-6 col-10 text-center">
             
             <h2>Resepsi</h2>
             <p class="alamat">
@@ -171,26 +173,32 @@
                   <!-- <h5 class="card-title">Resepsi</h5> -->
                   <div class="row justify-content-center">
                     
-                    <div class="col-md-6 my-2">
+                    <div class="col-md-8 my-2">
                       <h4><i class="bi bi-geo-alt-fill"></i></h4>
                       <h4>Balai RW Sanggrahan Karangasem</h4>
                       <p>
                         Sanggrahan, Wedomartani, Kec. Ngemplak, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55584
                     </p>
-                    <a href="https://maps.app.goo.gl/jjqd51BHXH2yLbBe8" target="_blank" class="btn btn-light btn-sm my-3">Buka di Google Maps</a>
+                    <a href="https://maps.app.goo.gl/jjqd51BHXH2yLbBe8" target="_blank" class="btn btn-dark btn-sm my-3">&nbsp Buka di Google Maps &nbsp</a>
                     </div>
                     
                   </div>
                 </div>
+                <div class="card-footer">
+                  <span>Mohon maaf tanpa mengurangi rasa hormat,<br> kami tidak menerima tamu di rumah</span>
+                </div>  
+  
               </div>
               <br>
             
             <p class="alamat">
               Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai. 
              </p>
+             <br>
              <p class="alamat">
-              Kami yang berbahagia. 
+              Kami yang berbahagia,
              </p>
+             <br>
              <div class="row">
               <div class="col-6">
                 <p class="alamat">
@@ -202,8 +210,6 @@
                  </p>
               </div>
              </div>
-             <h5></h5>
-             <h5></h5>
              
 
           </div>
@@ -225,10 +231,115 @@
       <div class="container">
         <div class="row justify-content-center">
           
+          <div class="col-md-8 text-center">
+            <h2>Rsvp & Ucapan</h2>
+            <p>Mohon para tamu untuk langsung mengisi konfirmasi kehadiran setelah menerima undangan ini.</p>
+          </div>
+          <div class="col-md-8">
+
+            <form action="" id="commentForm">
+              <div class="mb-3">
+                <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
+                <input type="text" class="form-control" id="nama" placeholder="Nama">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
+                <textarea class="form-control" id="ucapan" rows="3" placeholder="Berikan Ucapan dan Doa"></textarea>
+              </div>
+              <select class="form-select" aria-label="Default select example">
+                <option selected disabled text-muted>Konfirmasi Kehadiran</option>
+                <option value="hadir">Hadir</option>
+                <option value="tidak-hadir">Tidak Hadir</option>
+                <option value="ragu">Masih Ragu</option>
+              </select>
+              <br>
+              <button type="submit" class="btn btn-emas">Berikan Ucapan</button>
+            </form>
+
+          </div>
+          <div class="col-md-8 ucapan" id="response">
+            <table class="table bg-transparent ">
+              <tbody>
+                <tr>
+                  <td class="bg-transparent">
+                    <h6>Prabowo Subianto</h6>
+                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
+                    <span class="text-body-secondary d-block">2 days ago</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bg-transparent">
+                    <h6>Prabowo Subianto</h6>
+                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
+                    <span class="text-body-secondary d-block">2 days ago</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bg-transparent">
+                    <h6>Prabowo Subianto</h6>
+                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
+                    <span class="text-body-secondary d-block">2 days ago</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bg-transparent">
+                    <h6>Prabowo Subianto</h6>
+                    <span class="pesan-ucapan">Selamat Berbahagia Mbak Khansa dan Mas Aziz.. lancar semuanyaaaa, semoga menjadi keluarga yang sakinah mawaddah warahmah, aamiin</span>
+                    <span class="text-body-secondary d-block">2 days ago</span>
+                  </td>
+                </tr>
+                
+               
+              </tbody>
+            </table>
+          </div>
         </div>
+
       </div>
     </section>
 
+    <footer class="btn-emas text-white">
+      <div class="container py-4">
+
+        
+        <!-- Copyright -->
+        <div class="text-center mt-3">
+          <p class="mb-0">&copy; 2024 DAZDSGN.</p>
+        </div>
+    
+      </div>
+    </footer>
+
+
+    <script>
+      document.getElementById('commentForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Ambil data dari form
+          const nama = document.getElementById('nama').value;
+          const ucapan = document.getElementById('ucapan').value;
+
+          // URL web app dari Google Apps Script
+          const scriptURL = 'AKfycbwYgLbTK56H_FguIEOr0iOEp_EYZpTCb8pvjYBlLyo';
+
+          // Kirim data ke Google Sheets
+          fetch(scriptURL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams({
+                  'nama': nama,
+                  'ucapan': ucapan
+              })
+          })
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('response').innerText = data;
+              document.getElementById('nama').value = '';
+              document.getElementById('ucapan').value = '';
+          })
+          .catch(error => console.error('Error!', error));
+      });
+  </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="countdown/simplyCountdown.min.js"></script>
