@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   </head>
-  <body>
+  <body onload="loadComments()">
     <section id="hero" class="hero w-100 h-100 mx-auto text-center d-flex justify-content-center align-items-center">
         <main>
             <h4>The Wedding of</h4>
@@ -226,6 +226,7 @@
           <div class="col-md-8 ucapan">
             <table class="table bg-transparent ">
               <tbody>
+
                 <tr>
                   <td class="bg-transparent">
                     <h6>Prabowo</h6>
@@ -233,7 +234,9 @@
                     <span class="text-body-secondary d-block">2 days ago</span>
                   </td>
                 </tr> 
+
                 <div id="commentSection"></div>
+              
               </tbody>
             </table>
           </div>
@@ -257,10 +260,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="countdown/simplyCountdown.min.js"></script>
     
-    //ambil komentar
+    
     <script>
         async function loadComments() {
-            const dataURL = 'https://script.google.com/macros/s/AKfycbzj4sMkIr86SfSPRWTqxU43RF6zNRL2SNjz2KoDPVbQRyyAJ5334cahHhfnMrDQH_Nn/exec'; // Gunakan URL yang benar di sini
+            const dataURL = 'https://script.googleusercontent.com/macros/echo?user_content_key=aE4kvdJ1jcvHRHBRFxe0n4fVl9L44FAEvDkrx3v4l8DxFJmAxf2DWvFb5gOXylT0ypkSBUNGmol9Xt289HSsHcqzTDCC6fGym5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnLFD3PPeLwO0tlIrakyMBlHz69-s3utt1EivbvVSZucfKMLW-1i2KWO8cv7vWJ9jUQ&lib=M7gzjXj_jEtsDfYy6ME0jLsGxqOEMd7Cb'; // Gunakan URL yang benar di sini
             try {
                 const response = await fetch(dataURL);
                 if (!response.ok) {
@@ -276,9 +279,13 @@
                     commentDiv.classList.add('comment');
 
                     commentDiv.innerHTML = `
-                        <strong>${comment.nama}</strong> (${new Date(comment.waktu).toLocaleString()}):
-                        <p>${comment.ucapan}</p>
-                        <hr>
+                        <tr>
+                          <td class="bg-transparent">
+                            <h6>${comment.nama}</h6>
+                            <span class="pesan-ucapan">${comment.ucapan}</span>
+                            <span class="text-body-secondary d-block">(${new Date(comment.waktu).toLocaleString()}):</span>
+                          </td>
+                        </tr> 
                     `;
 
                     commentSection.appendChild(commentDiv);
@@ -290,7 +297,7 @@
 
     </script>
 
-    //kirim ucapan
+    
     <script>
       document.getElementById('commentForm').addEventListener('submit', function(e) {
           e.preventDefault();
@@ -321,7 +328,7 @@
       });
     </script>
    
-    //countdown
+    
     <script>
       simplyCountdown('.simply-countdown', {
             year: 2024, // required
@@ -337,7 +344,7 @@
       })
     </script>
     
-    //disable scroll
+    
     <script>
       const rootElement = document.querySelector(":root");
 
