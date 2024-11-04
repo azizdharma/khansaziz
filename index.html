@@ -31,40 +31,6 @@
         </main>
     </section>
 
-    <!-- <nav class="navbar navbar-expand-md sticky-top mynavbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">Khansa & Aziz</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Khansa & Aziz</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#info">Info</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#story">Story</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#rsvp">RSVP</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#gift">Gift</a>
-              </li>              
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav> -->
- 
     <section id="home" class="home w-100 h-100 text-center d-flex justify-content-center align-items-center">
       <div class="container">
 
@@ -231,38 +197,42 @@
       <div class="container">
         <div class="row justify-content-center">
           
-          <div class="col-md-8 text-center">
-            <h2>Rsvp & Ucapan</h2>
-            <p>Mohon para tamu untuk langsung mengisi konfirmasi kehadiran setelah menerima undangan ini.</p>
+          <div class="col-md-5 text-center">
+            <h2>Ucapan</h2>
+            <p>Doa restu dari Bapak/Ibu/Saudara/i akan menyempurnakan kebahagiaan kedua mempelai beserta keluarga.</p>
           </div>
           <div class="col-md-8">
 
             <form action="" id="commentForm">
               <div class="mb-3">
-                <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
                 <input type="text" class="form-control" id="nama" placeholder="Nama" required>
               </div>
               <div class="mb-3">
-                <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
                 <textarea class="form-control" id="ucapan" rows="3" placeholder="Berikan Ucapan dan Doa" required></textarea>
               </div>
-              <select class="form-select" aria-label="Default select example">
-                <option selected disabled text-muted>Konfirmasi Kehadiran</option>
+              <!-- <select class="form-select" aria-label="Default select example" name="konfirmasi" id="konfirmasi" required>
+                <option value="">Konfirmasi Kehadiran</option>
                 <option value="hadir">Hadir</option>
-                <option value="tidak-hadir">Tidak Hadir</option>
+                <option value="tidak">Tidak Hadir</option>
                 <option value="ragu">Masih Ragu</option>
               </select>
-              <br>
-              <button type="submit" class="btn btn-emas">Berikan Ucapan</button>
+              <br> -->
+              <button type="submit" value="Submit" class="btn btn-emas">Berikan Ucapan</button>
             </form>
 
           </div>
           <div id="response"></div>
-          <h2>Ucapan</h2>
-          
+       
           <div class="col-md-8 ucapan">
             <table class="table bg-transparent ">
               <tbody>
+                <tr>
+                  <td class="bg-transparent">
+                    <h6>Prabowo</h6>
+                    <span class="pesan-ucapan">Ya Ndak Tahu Kok Tanya Saya</span>
+                    <span class="text-body-secondary d-block">2 days ago</span>
+                  </td>
+                </tr> 
                 <div id="commentSection"></div>
               </tbody>
             </table>
@@ -284,6 +254,10 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="countdown/simplyCountdown.min.js"></script>
+    
+    //ambil komentar
     <script>
       // URL Web App Google Apps Script untuk mengambil data komentar
       const dataURL = 'https://script.google.com/macros/s/AKfycbwYgLbTK56H_FguIEOr0iOEp_EYZpTCb8pvjYBlLyo/exec';
@@ -306,13 +280,9 @@
   
                   // Isi elemen dengan data komentar
                   commentDiv.innerHTML = `
-                    <tr>
-                      <td class="bg-transparent">
-                        <h6>${comment.nama}</h6>
-                        <span class="pesan-ucapan">${comment.ucapan}</span>
-                        <span class="text-body-secondary d-block">(${new Date(comment.waktu).toLocaleString()})</span>
-                      </td>
-                    </tr>   
+                      <strong>${comment.nama}</strong> (${new Date(comment.waktu).toLocaleString()}):
+                      <p>${comment.komentar}</p>
+                      <hr>
                   `;
   
                   // Tambahkan elemen ke section komentar
@@ -325,9 +295,9 @@
   
       // Panggil fungsi untuk memuat komentar saat halaman dibuka
       loadComments();
-  </script>
-  
+    </script>
 
+    //kirim ucapan
     <script>
       document.getElementById('commentForm').addEventListener('submit', function(e) {
           e.preventDefault();
@@ -356,12 +326,10 @@
           })
           .catch(error => console.error('Error!', error));
       });
-  </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="countdown/simplyCountdown.min.js"></script>
+    </script>
    
-   <script>
+    //countdown
+    <script>
       simplyCountdown('.simply-countdown', {
             year: 2024, // required
             month: 12, // required
@@ -375,7 +343,8 @@
             },
       })
     </script>
-
+    
+    //disable scroll
     <script>
       const rootElement = document.querySelector(":root");
 
