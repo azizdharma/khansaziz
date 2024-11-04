@@ -259,42 +259,35 @@
     
     //ambil komentar
     <script>
-      // URL Web App Google Apps Script untuk mengambil data komentar
-      const dataURL = 'https://script.google.com/macros/s/AKfycbwYgLbTK56H_FguIEOr0iOEp_EYZpTCb8pvjYBlLyo/exec';
-  
-      // Fungsi untuk mengambil data komentar dan menampilkannya
-      async function loadComments() {
-          try {
-              // Ambil data dari Google Sheets
-              const response = await fetch(dataURL);
-              const comments = await response.json();
-  
-              // Menampilkan komentar di halaman HTML
-              const commentSection = document.getElementById('commentSection');
-              commentSection.innerHTML = ''; // Kosongkan elemen sebelumnya
-              
-              comments.forEach(comment => {
-                  // Buat elemen baru untuk setiap komentar
-                  const commentDiv = document.createElement('div');
-                  commentDiv.classList.add('comment');
-  
-                  // Isi elemen dengan data komentar
-                  commentDiv.innerHTML = `
-                      <strong>${comment.nama}</strong> (${new Date(comment.waktu).toLocaleString()}):
-                      <p>${comment.komentar}</p>
-                      <hr>
-                  `;
-  
-                  // Tambahkan elemen ke section komentar
-                  commentSection.appendChild(commentDiv);
-              });
-          } catch (error) {
-              console.error('Gagal memuat komentar:', error);
-          }
-      }
-  
-      // Panggil fungsi untuk memuat komentar saat halaman dibuka
-      loadComments();
+        async function loadComments() {
+            const dataURL = 'https://script.google.com/macros/s/AKfycbzj4sMkIr86SfSPRWTqxU43RF6zNRL2SNjz2KoDPVbQRyyAJ5334cahHhfnMrDQH_Nn/exec'; // Gunakan URL yang benar di sini
+            try {
+                const response = await fetch(dataURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const comments = await response.json();
+
+                const commentSection = document.getElementById('commentSection');
+                commentSection.innerHTML = ''; // Kosongkan elemen sebelumnya
+
+                comments.forEach(comment => {
+                    const commentDiv = document.createElement('div');
+                    commentDiv.classList.add('comment');
+
+                    commentDiv.innerHTML = `
+                        <strong>${comment.nama}</strong> (${new Date(comment.waktu).toLocaleString()}):
+                        <p>${comment.ucapan}</p>
+                        <hr>
+                    `;
+
+                    commentSection.appendChild(commentDiv);
+                });
+            } catch (error) {
+                console.error('Gagal memuat komentar:', error);
+            }
+        }
+
     </script>
 
     //kirim ucapan
