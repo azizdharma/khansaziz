@@ -27,6 +27,23 @@ body {
 .emas {
     color: var(--emas);
 }
+
+.text-kecil {
+    color: grey;
+    font-size: small;
+}
+
+.text-kecil-banget {
+    color: grey;
+    font-size: x-small;
+    font-weight: 500 !important;
+}
+
+h6 {
+    font-weight: 600;
+    margin-bottom: 0px !important;
+}
+
 .hero {
     min-height: 100vh;
     background-image: url(img/bg-1.png);
@@ -80,13 +97,14 @@ body {
     margin-top: 2rem;
     background-color: transparent !important;
     text-align: left;
-    max-height: 300px !important; /* Batas tinggi maksimum */
+    max-height: 400px !important; /* Batas tinggi maksimum */
     overflow-y: auto;  /* Menambahkan scrollbar vertikal */
 }
 
 .pesan-ucapan {
     font-size: 1rem;
 }
+
 
 
 .mynavbar .navbar-brand, 
@@ -186,7 +204,7 @@ body {
     background-position: top;
     background-color: var(--bg);
     color: #444;
-    padding-top: 7rem;
+    padding-top: 5rem;
     padding-bottom: 8rem;
 }
 
