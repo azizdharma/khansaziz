@@ -185,126 +185,67 @@
 
     <section id="gift" class="gift text-center d-flex justify-content-center align-items-center">
       <div class="container">
-        <!-- <div class="row justify-content-center">
-          
+        <div class="row justify-content-center">
           <div class="col-md-5 text-center">
-            <h2>Rsvp & Ucapan</h2>
-            <p>Doa restu dari Bapak/Ibu/Saudara/i akan menyempurnakan kebahagiaan kedua mempelai beserta keluarga.</p>
+              <h2>Rsvp & Ucapan</h2>
+              <p>Doa restu dari Bapak/Ibu/Saudara/i akan menyempurnakan kebahagiaan kedua mempelai beserta keluarga.</p>
           </div>
-          <div class="col-md-8">
-            <form method="POST" action="proses.php">
-              <div class="mb-3">
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required>
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" id="ucapan" name="ucapan" rows="3" placeholder="Berikan Ucapan dan Doa" required></textarea>
-              </div>
-              <select class="form-select" id="konfirmasi" name="konfirmasi" required>
-                <option value="">Konfirmasi Kehadiran</option>
-                <option value="1">Hadir</option>
-                <option value="2">Tidak Hadir</option>
-                <option value="3">Masih Ragu</option>
-              </select>
-              <br>
-              <button type="submit" value="Submit" class="btn btn-emas">Berikan Ucapan</button>
-            </form>
-          </div>
-          <div id="response"></div>
+          <!-- <div class="col-md-8">
+              <form method="POST" action="proses.php">
+                  <div class="mb-3">
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required>
+                      </div>
+                      <div class="mb-3">
+                          <textarea class="form-control" id="ucapan" name="ucapan" rows="3" placeholder="Berikan Ucapan dan Doa" required></textarea>
+                      </div>
+                      <select class="form-select" id="konfirmasi" name="konfirmasi" required>
+                          <option value="">Konfirmasi Kehadiran</option>
+                          <option value="1">Hadir</option>
+                          <option value="2">Tidak Hadir</option>
+                          <option value="3">Masih Ragu</option>
+                      </select>
+                      <br>
+                  <button type="submit" value="Submit" class="btn btn-emas">Berikan Ucapan</button>
+              </form>
+          </div>-->
+          <div id="response"></div> 
           <div class="col-md-8 ucapan">
-            <div class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center">
-              <div class="list-group">
-
-                <?php
-                //$conn = new mysqli("localhost", "root", "", "wedding_khansa_aziz");
-                $conn = new mysqli("127.0.0.1", "khdbdneq_aziz", "khansacantik", "khdbdneq_wedding_khansa_aziz");
-
-                if ($conn->connect_error) {
-                    die("Koneksi gagal: " . $conn->connect_error);
-                }
-
-                $sql = "SELECT nama, ucapan, konfirmasi, reg_date FROM kehadiran ORDER BY id DESC";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-
-                      $reg_date = strtotime($row["reg_date"]);
-                      $today = strtotime('today');
-                      $yesterday = strtotime('yesterday');
-
-                      if (date('Y-m-d', $reg_date) == date('Y-m-d', $today)) {
-                          $formatted_date = "Hari ini";
-                      } elseif (date('Y-m-d', $reg_date) == date('Y-m-d', $yesterday)) {
-                          $formatted_date = "Kemarin";
-                      } else {
-                          $formatted_date = date('j F Y', $reg_date);
-                      }
-
-                      $rsvp = ($row["konfirmasi"]);
-
-                      if ($rsvp == '1') {
-                        $rsvp = "Akan hadir";
-                      } elseif ($rsvp == '2') {
-                        $rsvp = "Belum bisa hadir";
-                      } else {
-                        $rsvp = "Masih ragu";
-                      } 
-                      
-                      echo "<div class='list-group-item list-group-item-action d-flex gap-3 py-3' aria-current='true'>
-                              <img src='../img/ava.png' alt='twbs' width='40' height='40' class='rounded-circle flex-shrink-0'>
-                              <div class='d-flex gap-2 w-100 justify-content-between'>
-                                <div>
-                                  <h6 class='mb-0'>" . $row["nama"] . "</h6>
-                                  <p class=''>" . $row["ucapan"] . "</p>
-                                </div>
-                                <small class='opacity-50 text-nowrap'>"
-                                . $rsvp . 
-                                "</small>
-                              </div>
-                            </div>";
-                    }
-                } else {
-                    echo "Tidak ada komentar.";
-                }
-
-                $conn->close();
-                ?>
-                
+              <div class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center">
+                <iframe src="https://daz.biz.id/wedding/rsvp.php" width="100%" height="400px"></iframe>
               </div>
-            </div>
           </div>
-        </div>
-        <br><br><br> -->
+      </div>
+      <br><br><br>
         <div class="row justify-content-center">
           <div class="col-lg-4 col-md-12">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="../img/studio (1).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (1).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (2).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (2).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (3).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (3).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (4).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (4).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (5).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (5).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (6).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (6).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (7).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (7).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (8).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (8).jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/studio (9).jpg" class="d-block w-100" alt="...">
+                  <img src="img/studio (9).jpg" class="d-block w-100" alt="...">
                 </div>
 
               </div>
